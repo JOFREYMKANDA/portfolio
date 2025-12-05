@@ -1,91 +1,57 @@
-# Portfolio Website
+# Jofrey Mkanda — Software Developer Portfolio
 
-A modern, responsive portfolio website showcasing projects, skills, and professional experience.
+A modern, responsive single-page portfolio showcasing my work, skills, and ways to connect.
 
-## Project Structure
+- Live site: `https://jofreymkanda.com`
+- Repository: `https://github.com/JOFREYMKANDA/portfolio`
 
-```
-portfolio/
-├── index.html          # Main HTML file
-├── css/
-│   └── styles.css      # All styles and CSS
-├── js/
-│   └── script.js       # JavaScript functionality
-├── assets/
-│   └── images/         # Image assets (place your images here)
-└── README.md           # Project documentation
-```
+## About Me
+I’m a software developer focused on building clean, user-friendly experiences for the web. I care about accessible interfaces, performant frontends, and code that is easy to maintain. I enjoy transforming ideas into polished products and collaborating with teams to ship reliable features.
 
-## Features
+## What I Do
+- Build responsive web apps and landing pages
+- Build cross-platform mobile apps
+- Design intuitive user flows and UI interactions
+- Integrate APIs and simple automations
+- Optimize performance and accessibility
 
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- **Modern UI/UX**: Clean, professional design with smooth animations
-- **Smooth Scrolling**: Enhanced navigation with smooth scroll effects
-- **Contact Form**: Ready-to-integrate contact form
-- **SEO Friendly**: Proper meta tags and semantic HTML
+## Tech Stack
+- HTML5, CSS3 (modern layouts, animations)
+- JavaScript (ES6+)
+- Flutter
+- Python
+- Node.js
+- React native
+- MongoDB
 
-## Getting Started
+## Featured Projects
 
-### Prerequisites
+### Oil Connect
+<img src="assets/images/oilConnect.png" alt="Oil Connect dashboard screenshot" width="800">
 
-No dependencies required! This is a pure HTML/CSS/JavaScript project.
+A fuel delivery platform connecting station owners with tank owners. Supports station registration, bulk orders with auto-pricing, real-time delivery tracking, and optimized GPS routing.
 
-### Running Locally
+- Status: Live demo coming soon
+- Code: [GitHub](https://github.com/JOFREYMKANDA)
 
-#### Option 1: Python HTTP Server (Recommended)
-```bash
-python3 -m http.server 8000
-```
-Then open `http://localhost:8000` in your browser.
+### Furaha-ebooks Admin Dashboard
+<img src="assets/images/ebookAdmin.png" alt="Furaha-ebooks admin dashboard screenshot" width="800">
 
-#### Option 2: Node.js http-server
-```bash
-npx http-server -p 8000
-```
+A full-featured web dashboard for managing a bookshop: deliveries, drivers, inventory, and analytics, all in a responsive, modern interface.
 
-#### Option 3: Open Directly
-Simply open `index.html` in your web browser (some features may be limited).
+- Status: Live demo coming soon
+- Code: [GitHub](https://github.com/JOFREYMKANDA)
 
-## Customization
+## Highlights
+- Responsive design for desktop, tablet, and mobile
+- Smooth navigation and micro-interactions
+- SEO-friendly metadata and semantic HTML
+- Contact form ready to wire up via EmailJS
 
-### Update Personal Information
-1. Replace "Your Name" throughout `index.html`
-2. Update the About section with your story
-3. Add your skills in the Skills section
-4. Add your projects with descriptions and links
-5. Update social media links in the footer
+## Contact
+- Email: jofreymkanda@gmail.com
+- LinkedIn: https://www.linkedin.com/in/jofrey-mkanda-0297b8296/
+- GitHub: https://github.com/JOFREYMKANDA
+- Instagram: https://www.instagram.com/mk_softwares/
 
-### Styling
-All styles are in `css/styles.css`. Customize colors by modifying CSS variables:
-```css
-:root {
-    --primary-color: #6366f1;
-    --secondary-color: #8b5cf6;
-    /* ... */
-}
-```
-
-### Contact Form
-The contact form currently shows an alert. To make it functional, integrate with:
-- [Formspree](https://formspree.io/)
-- [EmailJS](https://www.emailjs.com/)
-- Your own backend API
-
-Update the form submission logic in `js/script.js`.
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## License
-
-This project is open source and available under the MIT License.
-
-## Author
-
-Your Name - [Your Website/Portfolio](https://yourwebsite.com)
-
-
+Thanks for visiting! If you’d like to collaborate or have a project in mind, feel free to reach out. 

@@ -28,4 +28,6 @@ npm-debug.log*
 *.tmp
 *.temp
 
+*.md
+
 

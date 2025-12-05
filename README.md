@@ -32,7 +32,6 @@ I’m a software developer focused on building clean, user-friendly experiences 
 A fuel delivery platform connecting station owners with tank owners. Supports station registration, bulk orders with auto-pricing, real-time delivery tracking, and optimized GPS routing.
 
 - Status: Live demo coming soon
-- Code: [GitHub](https://github.com/JOFREYMKANDA)
 
 ### Furaha-ebooks Admin Dashboard
 <img src="assets/images/ebookAdmin.png" alt="Furaha-ebooks admin dashboard screenshot" width="800">
@@ -40,7 +39,6 @@ A fuel delivery platform connecting station owners with tank owners. Supports st
 A full-featured web dashboard for managing a bookshop: deliveries, drivers, inventory, and analytics, all in a responsive, modern interface.
 
 - Status: Live demo coming soon
-- Code: [GitHub](https://github.com/JOFREYMKANDA)
 
 ## Highlights
 - Responsive design for desktop, tablet, and mobile

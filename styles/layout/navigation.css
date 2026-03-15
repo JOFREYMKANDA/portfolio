@@ -65,7 +65,7 @@ nav.scrolled {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    background: var(--secondary-color);
     transition: width 0.3s ease;
 }
 
@@ -123,4 +123,3 @@ nav.scrolled {
 .mobile-menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
 }
-

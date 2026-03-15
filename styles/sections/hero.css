@@ -19,7 +19,7 @@
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(15, 118, 110, 0.10) 0%, transparent 70%);
     border-radius: 50%;
     z-index: 0;
     animation: float 20s ease-in-out infinite;
@@ -32,7 +32,7 @@
     left: -5%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(15, 118, 110, 0.06) 0%, transparent 70%);
     border-radius: 50%;
     z-index: 0;
     animation: float 15s ease-in-out infinite reverse;
@@ -165,10 +165,6 @@
     font-weight: var(--font-weight-medium);
     letter-spacing: var(--letter-spacing-wide);
     line-height: var(--line-height-relaxed);
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 #typing-text {
@@ -177,10 +173,6 @@
     font-weight: var(--font-weight-medium);
     letter-spacing: var(--letter-spacing-wide);
     line-height: var(--line-height-relaxed);
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 #typing-text::after {
@@ -253,4 +245,3 @@
 .cta-button:hover {
     opacity: 0.9;
 }
-

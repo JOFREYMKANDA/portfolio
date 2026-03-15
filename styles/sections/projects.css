@@ -95,7 +95,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.03), rgba(59, 130, 246, 0.03));
+    background: rgba(15, 118, 110, 0.05);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -164,7 +164,7 @@
 }
 
 .project-links a:hover:not(.coming-soon) {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1));
+    background: rgba(15, 118, 110, 0.10);
     color: var(--secondary-color);
     transform: translateX(4px);
 }
@@ -198,4 +198,3 @@
     margin-left: 0.5rem;
     text-transform: uppercase;
 }
-

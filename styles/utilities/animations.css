@@ -61,7 +61,7 @@
     right: 2rem;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    background: var(--secondary-color);
     color: white;
     border: none;
     border-radius: 50%;
@@ -119,4 +119,3 @@
     transform: translateY(-8px) scale(1.1);
     box-shadow: var(--shadow-xl);
 }
-

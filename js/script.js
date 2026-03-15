@@ -73,9 +73,9 @@
      */
     function smoothScrollTo(target, offset = 0) {
         if (!target) return;
-        
+
         const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        
+
         window.scrollTo({
             top: targetPosition,
             behavior: 'smooth'
@@ -98,7 +98,7 @@
         toast.className = `toast toast-${type}`;
         toast.setAttribute('role', 'alert');
         toast.setAttribute('aria-live', 'polite');
-        
+
         const icon = type === 'success' ? '✓' : type === 'error' ? '✕' : 'ℹ';
         toast.innerHTML = `
             <span class="toast-icon">${icon}</span>
@@ -185,7 +185,7 @@
                     const navHeight = nav ? nav.offsetHeight : 0;
                     smoothScrollTo(target, navHeight);
                     closeMobileMenu();
-                    
+
                     // Update URL without triggering scroll
                     if (history.pushState) {
                         history.pushState(null, null, targetId);
@@ -214,15 +214,15 @@
             menuToggle.addEventListener('click', function (e) {
                 e.stopPropagation();
                 const isOpen = navLinks.classList.contains('active');
-                
+
                 navLinks.classList.toggle('active');
                 menuToggle.classList.toggle('active');
                 body.classList.toggle('menu-open');
-                
+
                 // Accessibility: Update ARIA attributes
                 menuToggle.setAttribute('aria-expanded', !isOpen);
                 navLinks.setAttribute('aria-hidden', isOpen);
-                
+
                 // Focus management
                 if (!isOpen && firstLink) {
                     setTimeout(() => firstLink.focus(), 100);
@@ -232,7 +232,7 @@
             // Close menu when clicking on a link
             navLinks.querySelectorAll('a').forEach((link, index, links) => {
                 link.addEventListener('click', closeMobileMenu);
-                
+
                 // Keyboard navigation: trap focus in menu
                 link.addEventListener('keydown', function (e) {
                     if (e.key === 'Tab') {
@@ -313,11 +313,11 @@
                 }
             });
 
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
                 const href = link.getAttribute('href');
                 if (href === `#${currentSection}`) {
-                            link.classList.add('active');
+                    link.classList.add('active');
                     link.setAttribute('aria-current', 'page');
                 } else {
                     link.removeAttribute('aria-current');
@@ -367,7 +367,7 @@
         const animatableElements = document.querySelectorAll(
             'section, .section-title, .about-text, .project-card, .contact-form, .form-group'
         );
-        
+
         animatableElements.forEach(element => {
             if (!element.classList.contains('fade-in')) {
                 element.classList.add('fade-in');
@@ -598,10 +598,17 @@
                 const subject = formData.get('subject');
                 const message = formData.get('message');
 
+                // Get submitted at date and time
+                const submittedAt = new Intl.DateTimeFormat('en-US', {
+                    dateStyle: 'full',
+                    timeStyle: 'short',
+                    timeZone: 'Africa/Dar_es_Salaam'
+                }).format(new Date());
+
                 // Get submit button
                 const submitButton = this.querySelector('.submit-button');
                 const originalText = submitButton.textContent;
-                
+
                 // Show loading state
                 submitButton.disabled = true;
                 submitButton.textContent = 'Sending...';
@@ -622,7 +629,8 @@
                     from_name: name,
                     from_email: email,
                     subject: subject,
-                    message: message
+                    message: message,
+                    submitted_at: submittedAt
                 };
 
                 emailjs.send("service_2j47rqf", "template_ntz9979", templateParams)
@@ -659,49 +667,49 @@
     function initPageLoader() {
         const loader = document.getElementById('page-loader');
         const body = document.body;
-        
+
         if (!loader) return;
-        
+
         body.classList.add('loading');
-        
+
         const minDisplayTime = 500;
         const startTime = Date.now();
-        
+
         function hideLoader() {
             const elapsedTime = Date.now() - startTime;
             const remainingTime = Math.max(0, minDisplayTime - elapsedTime);
-            
-            setTimeout(function() {
+
+            setTimeout(function () {
                 loader.classList.add('hidden');
                 body.classList.remove('loading');
-                
-                setTimeout(function() {
+
+                setTimeout(function () {
                     loader.remove();
                 }, 600);
             }, remainingTime);
         }
-        
+
         if (document.readyState === 'complete') {
             if (document.images.length === 0) {
                 hideLoader();
             } else {
                 let imagesLoaded = 0;
                 const totalImages = document.images.length;
-                
-                Array.from(document.images).forEach(function(img) {
+
+                Array.from(document.images).forEach(function (img) {
                     if (img.complete) {
                         imagesLoaded++;
                         if (imagesLoaded === totalImages) {
                             hideLoader();
                         }
                     } else {
-                        img.addEventListener('load', function() {
+                        img.addEventListener('load', function () {
                             imagesLoaded++;
                             if (imagesLoaded === totalImages) {
                                 hideLoader();
                             }
                         });
-                        img.addEventListener('error', function() {
+                        img.addEventListener('error', function () {
                             imagesLoaded++;
                             if (imagesLoaded === totalImages) {
                                 hideLoader();
@@ -711,12 +719,12 @@
                 });
             }
         } else {
-            window.addEventListener('load', function() {
+            window.addEventListener('load', function () {
                 hideLoader();
             });
         }
-        
-        setTimeout(function() {
+
+        setTimeout(function () {
             if (!loader.classList.contains('hidden')) {
                 hideLoader();
             }
@@ -732,17 +740,17 @@
      */
     function initCopyToClipboard() {
         const emailLink = document.querySelector('a[href^="mailto:"]');
-        
+
         if (emailLink && navigator.clipboard) {
-            emailLink.addEventListener('click', function(e) {
+            emailLink.addEventListener('click', function (e) {
                 // Allow default mailto behavior on mobile or if Ctrl/Cmd is pressed
                 if (e.ctrlKey || e.metaKey || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                     return;
                 }
-                
+
                 e.preventDefault();
                 const email = this.getAttribute('href').replace('mailto:', '');
-                
+
                 navigator.clipboard.writeText(email).then(() => {
                     showToast('Email address copied to clipboard!', 'success');
                 }).catch(() => {
@@ -772,7 +780,7 @@
      */
     function initKeyboardNavigation() {
         // Skip to main content link (accessibility)
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             // Alt + S: Skip to main content
             if (e.altKey && e.key === 's') {
                 e.preventDefault();
@@ -790,8 +798,8 @@
             if (links.length > 0) {
                 card.setAttribute('tabindex', '0');
                 card.setAttribute('role', 'article');
-                
-                card.addEventListener('keydown', function(e) {
+
+                card.addEventListener('keydown', function (e) {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
                         const firstLink = links[0];
@@ -813,12 +821,12 @@
      */
     function logPerformanceMetrics() {
         if (window.performance && window.performance.timing) {
-            window.addEventListener('load', function() {
-                setTimeout(function() {
+            window.addEventListener('load', function () {
+                setTimeout(function () {
                     const perfData = window.performance.timing;
                     const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
                     const domReadyTime = perfData.domContentLoadedEventEnd - perfData.navigationStart;
-                    
+
                     if (pageLoadTime > 3000) {
                         console.warn('Page load time is slow:', pageLoadTime + 'ms');
                     }
@@ -857,7 +865,7 @@
     function init() {
         // Initialize page loader first (runs immediately)
         initPageLoader();
-        
+
         // Wait for DOM to be fully loaded
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', function () {

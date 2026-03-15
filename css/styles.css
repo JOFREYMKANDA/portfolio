@@ -16,7 +16,7 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    
+
     /* Typography Variables */
     --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     --font-weight-light: 300;
@@ -26,25 +26,34 @@
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
     --font-weight-black: 900;
-    
+
     /* Modular Typographic Scale (Major Third - 1.25) */
-    --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);      /* 12-14px */
-    --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);        /* 14-16px */
-    --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);      /* 16-18px */
-    --font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);       /* 18-20px */
-    --font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);        /* 20-24px */
-    --font-size-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);              /* 24-32px */
-    --font-size-3xl: clamp(2rem, 1.7rem + 1.5vw, 2.5rem);            /* 32-40px */
-    --font-size-4xl: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);            /* 40-56px */
-    --font-size-5xl: clamp(3rem, 2.3rem + 3.5vw, 4.5rem);           /* 48-72px */
-    
+    --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    /* 12-14px */
+    --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    /* 14-16px */
+    --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    /* 16-18px */
+    --font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+    /* 18-20px */
+    --font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+    /* 20-24px */
+    --font-size-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    /* 24-32px */
+    --font-size-3xl: clamp(2rem, 1.7rem + 1.5vw, 2.5rem);
+    /* 32-40px */
+    --font-size-4xl: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
+    /* 40-56px */
+    --font-size-5xl: clamp(3rem, 2.3rem + 3.5vw, 4.5rem);
+    /* 48-72px */
+
     /* Line Heights (Optimal for readability) */
     --line-height-tight: 1.2;
     --line-height-snug: 1.375;
     --line-height-normal: 1.5;
     --line-height-relaxed: 1.625;
     --line-height-loose: 1.75;
-    
+
     /* Letter Spacing */
     --letter-spacing-tighter: -0.05em;
     --letter-spacing-tight: -0.025em;
@@ -64,7 +73,12 @@
 }
 
 /* Typography Base Styles */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-family-base);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tight);
@@ -177,6 +191,7 @@ body.loading {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -380,14 +395,14 @@ nav.scrolled {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 3rem;
+    justify-content: space-between;
+    gap: clamp(2.5rem, 4vw, 5rem);
     flex-wrap: wrap;
 }
 
 .hero-content {
-    flex: 1;
-    min-width: 300px;
+    flex: 1 1 520px;
+    max-width: 560px;
     text-align: left;
     position: relative;
     z-index: 1;
@@ -395,19 +410,17 @@ nav.scrolled {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1rem;
+    align-items: flex-start;
+    gap: 0.75rem;
 }
 
 .hero-image {
-    flex: 1;
-    min-width: 300px;
+    flex: 0 1 460px;
+    min-width: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--bg-color);
-}
-
-.hero-image {
     position: relative;
     z-index: 1;
 }
@@ -427,7 +440,7 @@ nav.scrolled {
 
 .hero-image img {
     width: 100%;
-    max-width: 700px;
+    max-width: 560px;
     height: auto;
     object-fit: contain;
     filter: grayscale(80%) contrast(1.1);
@@ -443,10 +456,13 @@ nav.scrolled {
 }
 
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translate(-50%, -50%) scale(1);
         opacity: 0.5;
     }
+
     50% {
         transform: translate(-50%, -50%) scale(1.1);
         opacity: 0.3;
@@ -463,28 +479,48 @@ nav.scrolled {
     margin-bottom: 0.5rem;
 }
 
-.hero h1:first-of-type {
-    margin-bottom: -0.5rem;
-    font-weight: var(--font-weight-light);
-    letter-spacing: var(--letter-spacing-tight);
+.hero-intro {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-widest);
+    text-transform: uppercase;
+    color: var(--secondary-color);
 }
 
-.hero h1:last-of-type {
-    font-weight: var(--font-weight-extrabold);
-    letter-spacing: var(--letter-spacing-tighter);
+.hero h1 {
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-black);
+    line-height: 1.05;
+    letter-spacing: -0.06em;
+    animation: fadeInUp 0.8s ease;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    max-width: 11ch;
 }
 
-.hero p {
-    font-size: var(--font-size-xl);
+.hero-summary {
+    font-size: var(--font-size-lg);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-relaxed);
     letter-spacing: var(--letter-spacing-normal);
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-    opacity: 0.95;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    max-width: 52ch;
     animation: fadeInUp 1s ease;
-    color: var(--primary-color);
-    min-height: 2rem;
+}
+
+#typing-text {
+    min-height: 1.75rem;
+    margin: 0 0 1.5rem;
+    color: var(--secondary-color);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--letter-spacing-wide);
+    line-height: var(--line-height-relaxed);
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 #typing-text {
@@ -1410,19 +1446,19 @@ footer p {
         width: 60px;
         height: 60px;
     }
-    
+
     .loader-name {
         font-size: var(--font-size-xl);
     }
-    
+
     .loader-subtitle {
         font-size: var(--font-size-xs);
     }
-    
+
     .loader-content {
         gap: 1.5rem;
     }
-    
+
     .mobile-menu-toggle {
         display: flex;
         z-index: 1001;
@@ -1485,7 +1521,7 @@ footer p {
     .hero p {
         font-size: var(--font-size-lg);
     }
-    
+
     #typing-text {
         font-size: var(--font-size-base);
     }
@@ -1497,15 +1533,15 @@ footer p {
     .section-title {
         font-size: var(--font-size-3xl);
     }
-    
+
     .about-text {
         font-size: var(--font-size-base);
     }
-    
+
     .project-content h3 {
         font-size: var(--font-size-xl);
     }
-    
+
     .project-content p {
         font-size: var(--font-size-sm);
     }

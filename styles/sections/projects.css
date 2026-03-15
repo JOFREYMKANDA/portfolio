@@ -1,0 +1,201 @@
+/* ============================================
+   Projects Section
+   ============================================ */
+.projects {
+    background: var(--bg-light);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    z-index: 1;
+}
+
+.project-card.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.project-card:nth-child(1).animate-in {
+    transition-delay: 0.1s;
+}
+
+.project-card:nth-child(2).animate-in {
+    transition-delay: 0.3s;
+}
+
+.project-card:nth-child(3).animate-in {
+    transition-delay: 0.5s;
+}
+
+.project-card:hover {
+    border-color: transparent;
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-8px) scale(1.02);
+}
+
+.project-card:hover::before {
+    transform: scaleX(1);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.project-screenshot {
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    height: auto;
+    min-height: 400px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.project-screenshot::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.03), rgba(59, 130, 246, 0.03));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-screenshot::after {
+    opacity: 1;
+}
+
+.project-screenshot img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.project-card:hover .project-screenshot img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 2rem;
+    position: relative;
+}
+
+.project-content h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-snug);
+    letter-spacing: var(--letter-spacing-tight);
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+}
+
+.project-content p {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-relaxed);
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--text-color);
+    margin-bottom: 1.25rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-base);
+    letter-spacing: var(--letter-spacing-wide);
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-links a:hover:not(.coming-soon) {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1));
+    color: var(--secondary-color);
+    transform: translateX(4px);
+}
+
+.project-links a::after {
+    content: '→';
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.project-links a:hover:not(.coming-soon)::after {
+    transform: translateX(4px);
+}
+
+.project-links a.coming-soon {
+    color: var(--text-light);
+    cursor: not-allowed;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.coming-soon-badge {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--letter-spacing-wide);
+    background: var(--bg-light);
+    color: var(--text-light);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+}
+

@@ -27,14 +27,14 @@ I’m a software developer focused on building clean, user-friendly experiences 
 ## Featured Projects
 
 ### Oil Connect
-<img src="assets/images/oilConnect.png" alt="Oil Connect dashboard screenshot" width="800">
+<img src="assets/images/projects/oil-connect.png" alt="Oil Connect dashboard screenshot" width="800">
 
 A fuel delivery platform connecting station owners with tank owners. Supports station registration, bulk orders with auto-pricing, real-time delivery tracking, and optimized GPS routing.
 
 - Status: Live demo coming soon
 
 ### Furaha-ebooks Admin Dashboard
-<img src="assets/images/ebookAdmin.png" alt="Furaha-ebooks admin dashboard screenshot" width="800">
+<img src="assets/images/projects/furaha-ebooks-admin.png" alt="Furaha-ebooks admin dashboard screenshot" width="800">
 
 A full-featured web dashboard for managing a bookshop: deliveries, drivers, inventory, and analytics, all in a responsive, modern interface.
 
@@ -45,6 +45,30 @@ A full-featured web dashboard for managing a bookshop: deliveries, drivers, inve
 - Smooth navigation and micro-interactions
 - SEO-friendly metadata and semantic HTML
 - Contact form ready to wire up via EmailJS
+
+## Project Structure
+```text
+.
+├── assets
+│   ├── icons
+│   │   └── favicons
+│   └── images
+│       ├── profile
+│       └── projects
+├── scripts
+│   ├── core
+│   └── features
+├── styles
+│   ├── base
+│   ├── components
+│   ├── layout
+│   ├── sections
+│   └── utilities
+├── index.html
+└── README.md
+```
+
+This structure keeps visual styles, interactive behavior, and static assets separated so future edits stay easier to find and scale.
 
 ## Contact
 - Email: jofreymkanda@gmail.com
